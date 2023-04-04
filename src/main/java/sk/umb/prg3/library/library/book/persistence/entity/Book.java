@@ -1,4 +1,4 @@
-package sk.umb.prg3.library.library.customer.persistence.entity;
+package sk.umb.prg3.library.library.book.persistence.entity;
 
 public class Book {
 
