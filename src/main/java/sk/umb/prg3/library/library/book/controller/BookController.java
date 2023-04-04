@@ -1,4 +1,4 @@
-package sk.umb.prg3.library.library.customer.controller;
+package sk.umb.prg3.library.library.book.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sk.umb.prg3.library.library.customer.persistence.entity.Book;
-import sk.umb.prg3.library.library.customer.persistence.repository.BookRepository;
+
+import sk.umb.prg3.library.library.book.persistence.entity.Book;
+import sk.umb.prg3.library.library.book.persistence.repository.BookRepository;
 
 @RestController
 @RequestMapping("/books")
