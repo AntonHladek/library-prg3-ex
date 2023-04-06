@@ -29,6 +29,7 @@ public class BookController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Book> getBook(@PathVariable(value = "id") Long bookId) {
+        System.out.println("vasa kniha: " +bookId);
         Optional<Book> book = bookRepository.findById(bookId);
         if (book.isPresent()) {
             return ResponseEntity.ok().body(book.get());
@@ -45,9 +46,10 @@ public class BookController {
     @PutMapping("/{id}")
     public ResponseEntity<Book> updateBook(@PathVariable(value = "id") Long bookId,
             @Valid @RequestBody Book bookDetails) {
+        System.out.println();
         Optional<Book> book = bookRepository.findById(bookId);
         if (book.isPresent()) {
-
+            System.out.println("Upravujem udaje knihy" +bookId);
             Book updatedBook = book.get();
             updatedBook.setName(bookDetails.getName());
             updatedBook.setIsbn(bookDetails.getIsbn());
@@ -67,10 +69,9 @@ public class BookController {
     public ResponseEntity<?> deleteBook(@PathVariable(value = "id") Long bookId) {
         Optional<Book> book = bookRepository.findById(bookId);
         if (book.isPresent()) {
-
             bookRepository.delete(book.get());
+            System.out.println("Mazem knihu" +bookId);
             return ResponseEntity.ok().build();
-
         } else {
             return ResponseEntity.notFound().build();
         }
